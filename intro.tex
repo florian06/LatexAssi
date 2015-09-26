@@ -20,6 +20,7 @@
 \centering
 \includegraphics[width=7.6cm]{uva.jpg}\\
 \caption{UvA logo: http://www.uva.nl/home}
+\label{UvA}
 \end{figure}
 \maketitle
 
@@ -62,8 +63,6 @@ Last but not least, a federated wiki can host content onto different servers, wh
 \end{itemize}
 
 
-
-
 \newpage
 \section{Homework2}
 \paragraph{}
@@ -72,13 +71,46 @@ Last but not least, a federated wiki can host content onto different servers, wh
 
 
 \newpage
-\section{Homework3}
-\paragraph{}
-% Joseph's part
+\section{XML in AJAX}
+\subsection{What is AJAX?}
+\textbf{AJAX} (Asynchronous JavaScript and XML) is a termed coined by Jesse James Garrett (figure \ref{fig:jjg}) in his article \textit{"Ajax: A New Approach to Web Applications"}\cite{JJG:AJAX}. It is a method of adding content to a webpage dynamically. Instead of linking one static page to another, the idea is to have web pages that behave more like desktop applications. Data is retrieved and added to a page without the entire page reloading. One of the first examples of this was in 1999. Internet Explorer 5 used an ActiveX control called XMLHTTP to make Outlook Web Access work more like Outlook on the desktop\cite{Wiki:XML}. This was later implemented in other browsers as the JavaScript \texttt{XMLHttpRequest} object, which was supported in Internet Explorer beginning with version 7\cite{MDN:XML}. See table \ref{tab:support} for other browsers. The \texttt{XMLHttpRequest} object allows synchronous or asynchronous requests\cite{MDN:XML}. \textbf{AJAX} specifies asynchronous requests since this prevents JavaScript from blocking while waiting for a response, allowing more responsive webpages the can continually update based on user interaction.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.2\textwidth]{jjg.jpg}
+	\caption{Jesse James Garrett\cite{JJG:Photo}}
+	\label{fig:jjg}
+\end{figure}
+\subsection{Why XML?}
+Despite its name, the \texttt{XMLHttpRequest} object does not require the use of XML\cite{MDN:XML}. Other data types can be requested such as an html fragment or plain text. Without the structure and meaning provided by XML, the data retrieved is not easily understood by the clients browser. When just updating some predefined location with the data requested, this is not much of an issue. This could be used for periodically changing the advertising banner at the top of the page. However, the idea of \textbf{AJAX} is to have a much more dynamic experience. XML provides a context to the data returned that the browser can use to understand the data and make multiple changes. For instance, imagine a web based music player. As one song comes to an end the browser could make a request for the next song and receive the following XML in response.
 
+\begin{verbatim}
+<song src="/media/first.mp3">
+  <title>My First Song</title>
+  <artist headshot="/images/jsmith.png">John Smith</artist>
+  <album year="2010" label="Big Records"
+  	coverart="/images/songs.png">Songs by John Smith</album>
+</song>
+\end{verbatim}
 
-
-
+The browser, now able to understand the information received, can use it to locate the media file to be played and at the same time update several different areas with information and images for the new song. One of the best examples of the power of \textbf{AJAX} is \textcolor{blue}{G}\textcolor{red}{o}\textcolor{yellow}{o}\textcolor{blue}{g}\textcolor{green}{l}\textcolor{red}{e} Maps\cite{Google:maps}. With a good internet connection, it allows the continuous scrolling of a map without any apparent loading. \texttt{XMLHttpRequest} is supported by most major browsers\cite{MDN:XML} and is a W3C draft specification\cite{W3C:XML}.
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|l|r|}
+	\hline
+	\textbf{Browser} & \textbf{Version}\\
+	\hline
+	Firefox & 1.0\\
+	\hline
+	Internet Explorer & 7\\
+	\hline
+	Safari & 1.2\\
+	\hline
+	Chrome & 1\\
+	\hline
+	\end{tabular}
+	\caption{Earliest version of browsers to support \texttt{XMLHttpRequest} object\cite{MDN:XML}.}
+	\label{tab:support}
+\end{table}
 
 \newpage
 \listoffigures

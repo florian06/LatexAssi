@@ -10,5 +10,6 @@
 \contentsline {paragraph}{Sources}{4}
 \contentsline {section}{\numberline {3}Homework2}{5}
 \contentsline {paragraph}{}{5}
-\contentsline {section}{\numberline {4}Homework3}{6}
-\contentsline {paragraph}{}{6}
+\contentsline {section}{\numberline {4}XML in AJAX}{6}
+\contentsline {subsection}{\numberline {4.1}What is AJAX?}{6}
+\contentsline {subsection}{\numberline {4.2}Why XML?}{6}
