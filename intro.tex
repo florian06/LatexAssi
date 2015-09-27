@@ -64,9 +64,57 @@ Last but not least, a federated wiki can host content onto different servers, wh
 
 
 \newpage
-\section{Homework2}
-\paragraph{}
-% Patrick's part
+\section{Debian packaging system}
+\textit{Due to the lack of decent documentation of the homework assignments, i will be using the 'Autotools' assignment to demonstrate my \LaTeX\ \cite{patref1}skill.}The text in this section is written by Patrick de Niet.
+\subsection{How does it work?}
+There are two types of Debian packages:
+ 
+\begin{itemize}
+\item
+\textbf{Binary packages}, which contain executables, configuration files, man/info pages, copyright information, and other documentation. These packages are distributed in a Debian-specific archive format; they are usually distinguished by having a '.deb' file extension. Binary packages can be unpacked using the Debian utility dpkg\cite{patref2}.
+\item
+\textbf{Source packages}, which consist of a .dsc file describing the source package (including the names of the following files), a .orig.tar.gz file that contains the original unmodified source in gzip-compressed tar format and usually a .diff.gz file that contains the Debian-specific changes to the original source. The utility dpkg-source packs and unpacks Debian source archives; details are provided in its manual page\cite{patref2}.
+\end{itemize}
+ 
+In practice, it comes down to this:
+ 
+Source packages are simply packages which just include source code, and can generally be used on any type of machine if the code is compiled in the right way.
+\\
+Binary packages are ones which have been made specifically for one type of computer, or architecture. Ubuntu supports the x86 (i386 or i686), AMD64 and PPC architectures. The correct binary packages will be used automatically, so you don't have to worry about picking the right ones\cite{patref3}.
+ 
+\subsection{How does it deal with dependencies?}
+¨Programs often use some of the same files as each other. Rather than putting these files into each package, a separate package can be installed to provide them for all of the programs that need them. So, to install a program which needs one of these files, the package containing those files must also be installed. When a package depends on another in this way, it is known as a package dependency. By specifying dependencies, packages can be made smaller and simpler, and duplicates of files and programs are mostly removed.
+ 
+When you install a program, its dependencies must be installed at the same time. Usually, most of the required dependencies will already be installed, but a few extras may be needed, too. So, when you install a package, don't be surprised if several other packages are installed too - these are just dependencies which are needed for your chosen package to function properly.¨\cite{patref3}
+ 
+\begin{figure}[ht]
+\includegraphics[width=.5in]{internet.jpg}
+\caption{The (3d representation of the internet\cite{patref4})}
+\end{figure}
+ 
+\begin{table}[]
+\centering
+\caption{Useless table\cite{patref5}}
+\label{my-label}
+\begin{tabular}{lllll}
+ & A  &  & B &  \\
+ &  &  &  &  \\
+ &  &  &  &  \\
+ & C &  & D & 
+\end{tabular}
+\end{table}
+ 
+ 
+\paragraph{Sources}
+\\ 
+\textcolor{red}{Summary format by Florian Ecard, continuing format for this document}
+\begin{itemize}
+\item \cite{patref1}
+\item \cite{patref2} 
+\item \cite{patref3}
+\item \cite{patref4}
+\item \cite{patref5}
+\end{itemize}
 
 
 
